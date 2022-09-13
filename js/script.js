@@ -81,6 +81,9 @@ const app = new Vue({
             } else {
                 this.imageActive--;
             }
+        },
+        activeImage(i) {
+        this.imageActive = i
         }
     }
 })
