@@ -37,6 +37,7 @@ const app = new Vue({
     el: '#app',
     data:{
         imageActive: 0,
+        intervallId: undefined,
         images: [
             {
                 image: 'img/01.jpg',
@@ -66,7 +67,15 @@ const app = new Vue({
         ]
 
     },
-    methods:{
+
+    created() { 
+
+    this.intervallId= setInterval( this.nextImage, 2000)
+    
+    },
+    
+
+    methods: {
         nextImage (){
             if(this.imageActive === this.images.length - 1 ){
                 this.imageActive = 0;
